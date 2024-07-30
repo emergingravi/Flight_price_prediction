@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Price Prediction</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: url("https://discovery.sndimg.com/content/dam/images/discovery/fullset/2022/10/Tegel%20Airport%20Berlin%20Germany%20GettyImages-1206187539.jpg.rend.hgtvcom.1280.1280.suffix/1665451950659.jpeg")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h2 {
+        text-align: center;
+        color: #4a90e2;
+        margin-bottom: 20px;
+      }
+      form {
+        background-color: #2f3130;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 600px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        color: #fff; /* White text for contrast */
+      }
+      label {
+        font-weight: bold;
+        margin: 5px 0;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="date"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        grid-column: span 2;
+        background: linear-gradient(135deg, #4caf50, #45a049);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 12px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      input[type="submit"]:hover {
+        background: linear-gradient(135deg, #45a049, #4caf50);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Flight Price Prediction</h2>
+      <form action="/submit_form" method="POST">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="dep_hours">Departure Hour:</label>
+        <input type="number" id="dep_hours" name="dep_hours" required />
+
+        <label for="dep_min">Departure Minute:</label>
+        <input type="number" id="dep_min" name="dep_min" required />
+
+        <label for="arrival_hours">Arrival Hour:</label>
+        <input type="number" id="arrival_hours" name="arrival_hours" required />
+
+        <label for="arrival_min">Arrival Minute:</label>
+        <input type="number" id="arrival_min" name="arrival_min" required />
+
+        <label for="duration_hours">Duration Hours:</label>
+        <input
+          type="number"
+          id="duration_hours"
+          name="duration_hours"
+          required
+        />
+
+        <label for="duration_min">Duration Minutes:</label>
+        <input type="number" id="duration_min" name="duration_min" required />
+
+        <label for="total_stops">Total Stops:</label>
+        <input type="number" id="total_stops" name="total_stops" required />
+
+        <label for="airline">Airline:</label>
+        <select id="airline" name="airline" required>
+          <option value="IndiGo">IndiGo</option>
+          <option value="Air India">Air India</option>
+          <option value="Jet Airways">Jet Airways</option>
+          <option value="SpiceJet">SpiceJet</option>
+          <option value="Multiple carriers">Multiple carriers</option>
+          <option value="GoAir">GoAir</option>
+          <option value="Vistara">Vistara</option>
+          <option value="Air Asia">Air Asia</option>
+          <option value="Vistara Premium economy">Vistara Premium economy</option>
+          <option value="Jet Airways Business">Jet Airways Business</option>
+          <option value="Multiple carriers Premium economy">
+            Multiple carriers Premium economy
+          </option>
+          <option value="Trujet">Trujet</option>
+        </select>
+
+        <label for="source">Source:</label>
+        <select id="source" name="source" required>
+          <option value="Banglore">Banglore</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Mumbai">Mumbai</option>
+        </select>
+
+        <label for="destination">Destination:</label>
+        <select id="destination" name="destination" required>
+          <option value="New Delhi">New Delhi</option>
+          <option value="Bangalore">Bangalore</option>
+          <option value="Cochin">Cochin</option>
+          <option value="Kolkata">Kolkata</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Hyderabad">Hyderabad</option>
+        </select>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
